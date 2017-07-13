@@ -1,17 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Your Buses</h1>
+<div class="container-fluid">
 
-<h3 class="text-muted">Your Current Location:</h3>
+  <div class="row">
+  <h1 class="text-center">Your Buses</h1>
+  <!-- Left Box -->
+    <div class="col-sm-6">
+      <h3 class="text-muted">Your Current Location:</h3>
 
-<p class="text-muted"><%= @location.full_street_address %> <small><%= link_to fa_icon('pencil', text: 'Edit'), edit_location_path(@location) %></small></p>
+      <p class="text-muted"><%= @location.full_street_address %> <small><%= link_to fa_icon('pencil', text: 'Edit'), edit_location_path(@location) %></small></p>
 
-<!-- Map goes here -->
-<div id="map-canvas">
+        <!-- Map goes here -->
+      <div id="map-canvas"></div>
 
-</div>
-
-<!-- I want to see all the buses that are close to me -->
+      </div>
+  <!-- Right Box -->
+    <div class="col-sm-6">
+      <!-- I want to see all the buses that are close to me -->
 <h3>The closest buses are...</h3>
 
 <!-- Get all buses and iterate through each one -->
@@ -36,7 +41,19 @@
   </p>
 <% end %>
 
+
+    </div>
+
+  </div>
+</div>
+
 <%= link_to fa_icon('pencil', text: 'Edit'), edit_location_path(@location), class: 'btn btn-xs btn-default' %>
+
+
+
+
+
+
 
 
 <!-- Tells rails where the google maps api is, along with your key -->
